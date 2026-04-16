@@ -25,33 +25,39 @@ public class Question07_3 {
 
 		for (int i = 0; i < itemNames.length; i++) {
 
-			System.out.println(itemNames[i] + "の在庫数：＞" + stocks[i]);
+			System.out.print(itemNames[i] + "の在庫数：＞");
+			String res = reader.readLine();
+			num = Integer.parseInt(res);
+			stocks[i] = num;
 
 		}
 
 		for (int i = 0; i < itemNames.length; i++) {
 
-			while (num < stocks[i]) {
+			System.out.print(itemNames[i] + "の購入数：＞");
+			String res = reader.readLine();
+			num = Integer.parseInt(res);
 
-				System.out.print(itemNames[i] + "の購入数：＞");
-				String res = reader.readLine();
-				num = Integer.parseInt(res);
+			while (num < stocks[i]) {
 
 				if (num > stocks[i]) {
 
 					System.out.println("在庫を超えています。もう一度入力してください。");
+					System.out.print(itemNames[i] + "の購入数：＞");
+					res = reader.readLine();
+					num = Integer.parseInt(res);
 
 				} else {
-
-					amounts[i] = num;
-					stocks[i] -= num;
-					num = 0;
 
 					break;
 
 				}
 
 			}
+
+			amounts[i] = num;
+			stocks[i] -= num;
+			num = 0;
 
 		}
 
