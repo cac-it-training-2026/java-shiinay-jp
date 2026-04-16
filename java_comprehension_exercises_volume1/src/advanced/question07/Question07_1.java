@@ -15,7 +15,7 @@ public class Question07_1 {
 
 		for (int i = 0; i < itemNames.length; i++) {
 
-			System.out.print("商品" + i + "を入力してください：＞");
+			System.out.print("商品" + (i + 1) + "を入力してください：＞");
 			String res = reader.readLine();
 			itemNames[i] = res;
 			System.out.print("\n");
